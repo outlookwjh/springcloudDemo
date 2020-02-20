@@ -1,0 +1,13 @@
+
+server:
+  port: 2002
+  context-path: /
+eureka:
+  instance:
+    hostname: EURAKASERVER2002.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://EURAKASERVER2001.com:2001/eureka/,http://EURAKASERVER2003.com:2003/eureka/

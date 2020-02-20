@@ -1,0 +1,22 @@
+
+server:
+  context-path: /
+  port: 80
+eureka:
+  instance:
+    hostname: consumer
+    appname: microservice-consumer
+    instance-id: consumer-80
+    #prefer-ip-address: true
+  client:
+    service-url:
+      #defaultZone: http://localhost:2001/eureka
+      defaultZone: http://EURAKASERVER2001.com:2001/eureka/,http://EURAKASERVER2001.com:2001/eureka/,http://EURAKASERVER2003.com:2003/eureka/
+
+
+info:
+   groupId: $project.groupId$
+   artifactId: $project.artifactId$
+   version: $project.version$
+   负责人: consumer
+   联系电话: 110

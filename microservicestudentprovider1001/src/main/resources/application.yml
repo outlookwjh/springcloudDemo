@@ -1,0 +1,33 @@
+server:
+  port: 1001
+  context-path: /
+spring:
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/db_springcloud
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  thymeleaf:
+    cache: false
+eureka:
+  instance:
+      hostname: provider
+      appname: microservice-provider
+      instance-id: provider-1001
+      #prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://EURAKASERVER2001.com:2001/eureka/,http://EURAKASERVER2001.com:2001/eureka/,http://EURAKASERVER2003.com:2003/eureka/
+
+
+info:
+   groupId: $project.groupId$
+   artifactId: $project.artifactId$
+   version: $project.version$
+   负责人: provider
+   联系电话: 110
